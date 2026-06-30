@@ -59,15 +59,79 @@ section h3 {
 
 .activity-card {
   margin-bottom: 15px;
-  padding: 15px;
+  padding: 18px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s, background-color 0.25s ease;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.activity-card:hover {
+  border-color: #1a237e;
+  box-shadow: 0 2px 8px rgba(26, 35, 126, 0.15);
+  transform: translateY(-1px);
+}
+
+.activity-card.selected-activity {
+  border-color: #1a237e;
+  background-color: #eef2ff;
+  box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.15);
 }
 
 .activity-card h4 {
   margin-bottom: 10px;
   color: #0066cc;
+}
+
+.participants-section {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.participants-section p {
+  margin-bottom: 8px;
+}
+
+.participants-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #444;
+}
+
+.participant-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.participant-email {
+  flex: 1;
+}
+
+.participant-remove {
+  border: none;
+  background: transparent;
+  color: #c62828;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.participant-remove:hover {
+  background-color: #ffebee;
+}
+
+.no-participants {
+  color: #555;
+  font-style: italic;
+  margin: 0;
 }
 
 .activity-card p {
@@ -91,6 +155,34 @@ section h3 {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+}
+
+.activity-preview {
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid #dbe2ff;
+  background-color: #eef2ff;
+  border-radius: 6px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.activity-preview p {
+  margin-bottom: 8px;
+  color: #1a237e;
+}
+
+.activity-preview .participants-list {
+  color: #334155;
+}
+
+.activity-preview .participant-item {
+  margin-bottom: 5px;
+}
+
+.activity-preview .no-participants {
+  color: #475569;
+  font-style: italic;
+  margin: 0;
 }
 
 button {
@@ -141,4 +233,26 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
